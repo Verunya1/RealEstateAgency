@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!--xmlns:th="http://www.w3.org/1999/xhtml"-->
+<!--xmlns:th="http://www.thymeleaf.org-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Подробная информация об объявлении </h4>
+<b>Описание объявления</b><br th:text="${advertisement.description}"><br>
+<b>Этаж</b><br th:text="${advertisement.floor}+'|' + ${advertisement.allFloor}"><br>
+<b>Количество комнат</b><br th:text="${advertisement.room}+'| ' + ${advertisement.square} +'м²'"><br>
+<b>Цена</b><br th:text="${advertisement.price}"><br>
+<b>Город</b><br th:text="${advertisement.city}"><br>
+<b>Автор объявления</b><br th:text="${advertisement.author}"><br>
+<!--th:object="${advertisement}-->
+<main>
+    <form  th:action="@{/advertisement/{id}(id=${advertisement.getId})}" th:method="POST">
+        <input type="submit" value="Удалить объявление"/>
+    </form>
+</main>
+</body>
+</html>

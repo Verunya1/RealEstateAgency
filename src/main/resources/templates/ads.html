@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Покупка квартир </h1>
+
+<!--<form  th:action="@{/advertisement/{id}(id=${advertisement.getId})}" th:method="GET">-->
+<!--    Поиск по городу: <input type="text" th:field="*{city}"><br>-->
+<!--    <input type="submit" value="Поиск"/>-->
+<!--</form>-->
+
+<div th:each="ad : ${ads}">
+    <ul>
+        <li><a th:href="@{/advertisement/{id}(id=${ad.getId})}" th:text="${ad.description} + ' ' + ${ad.price} ">Подробнее</a></li>
+    </ul>
+</div>
+<a href="/advertisement/new">Create new advertisement</a>
+</body>
+</html>

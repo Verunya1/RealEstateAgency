@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main>
+        <section class="flatPurchase container">
+            <h3>Добавить объявление</h3>
+            <form th:method="POST" th:action="@{/advertisement}" th:object="${advertisement}">
+                Описание объявления:<input type="text" th:field="*{description}"/><br><br>
+                Площадь:<input type="number" th:field="*{square}"/><br><br>
+                Количество комнат:<input type="number" th:field="*{room}"/><br><br>
+                Этаж:<input type="number" th:field="*{floor}"/><br><br>
+                Всего этажей в доме:<input type="number" th:field="*{allFloor}"/><br><br>
+                Цена:<input type="number" th:field="*{price}"/><br><br>
+                Адрес:<input type="text" th:field="*{address}"/><br><br>
+                Имя:<input type="text" th:field="*{author}"/><br><br>
+                Номер:<input type="text" th:field="*{number}"/><br><br>
+                Город:
+                <select th:field="*{city}">
+                    <optgroup label="Россия">
+                        <option value="Москва">Москва</option>
+                        <option value="Санкт-Петербург">Санкт-Петербург</option>
+                        <option value="Уфа">Уфа</option>
+                    </optgroup>
+                </select>
+                Тип объявления:
+                <select th:field="*{type}">
+                    <option value="Продать">Продать</option>
+                    <option value="Сдать">Сдать</option>
+                </select>
+                <input type="submit" value="Добавить объявление"/>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
